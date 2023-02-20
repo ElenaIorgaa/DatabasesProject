@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+@font-face {
+	font-family: 'SansationLight';
+	src: url('./FontSansationLight/SansationLight.eot');
+	src: local('SansationLight'), url('./FontSansationLight/SansationLight.woff') format('woff'), url('./FontSansationLight/SansationLight.ttf') format('truetype');
+}
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'SansationLight' !important;
+    background: rgb(166, 86, 86 );
+}
+
+/* Style tab links */
+.tablink {
+	font-weight: bold;
+	font-family: 'SansationLight' !important;
+    background-color: #bc8f8f;
+    color: azure;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 12px;
+    font-size: 17px;
+    width:7%;
+}
+
+.tablink:hover {
+    background-color: #800000;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+table, th, td {
+    border: 5px solid black;
+    border-collapse: collapse;
+    border-color: black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+th, td {
+    padding: 15px;
+}
+
+.radiotext {
+    margin: 10px 10px 10px 10px;
+}
+
+</style>
+<script>
+	function myFunction() {
+  var rate_value = document.getElementsByName('id_sala');
+
+	if(rate_value[0]){
+	alert(rate_value[0].value);
+	document.getElementsByName('id_sala').value=rate_value[0].value;
+	alert(document.getElementsByName('id_sala').value);
+  }}
+</script>
+</head>
+<body>
+
+  <a href="sali"><button class="tablink" style="background:rgb(99,22,32); color: white">Sali</button></a>
+  <a href="grupe"><button class="tablink">Grupe</button></a>
+  <a href="elevi"><button class="tablink" >Elevi</button></a>
+  <a href="spectacole"><button class="tablink">Spectacole</button></a>
+  <a href="instructori"><button class="tablink">Instructori </button></a>
+  <a href="pianisti"><button class="tablink">Pianisti </button></a>
+  <a href="elevi_spect"><button class="tablink">Elevi_spect</button></a>
+
+
+  <center>
+      <br>
+      <h1 id="h3">Editeaza sala</h1>
+      <br><br><br>
+      <form class="was-validated" method="POST" action="/editSala">
+
+
+           <div class="row">
+            <div class="col-md-6 mb-3">
+            <label for="validationServer01">Id_sala</label>
+            <input name="id_sala" type="id_sala" class="form-control is-valid" value="{{id_sala}}" required>
+
+          <div class="col-md-6 mb-3">
+            <label for="validationServer01">Dimensiune</label>
+            <input name="dimensiune" type="text" class="form-control is-valid" value="{{dimensiune}}" required>
+          </div>
+		  <div class="col-md-6 mb-3">
+            <label for="validationServer01">Capacitate</label>
+            <input name="capacitate" type="text" class="form-control is-valid" value="{{capacitate}}" required>
+          </div>
+        </div>
+
+        </div>
+        <button class="btn btn-primary" type="submit">Editeaza Sala</button>
+      </form>
+
+  </center>
+
+
+
+</script>
+
+</body>
+</html>

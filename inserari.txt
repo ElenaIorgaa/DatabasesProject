@@ -1,0 +1,90 @@
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,350);
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,450);
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,450);
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,500);
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,500);
+INSERT INTO SALI(capacitate,dimensiune) VALUES (10,550);
+
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('incepatori',1);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('incepatori',2);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('mediu',3);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('mediu',4);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('avansati',5);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('avansati',6);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('profesionisti',1);
+INSERT INTO GRUPE(statut, Sali_id_sala) VALUES('profesionisti',2);
+
+
+DELETE FROM INSTRUCTORI;
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('tr1s','Alina','incepator',5,1,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Abdul','Mihai','incepator',5,2,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=2));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Popescu','Mara','mediu',10,3,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Cozma','Maria','mediu',10,4,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=4));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Popscu','Ion','avansat',15,5,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=5));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Catinca','Teodora','avansat',15,6,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=6));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Toma','Alexandru','profesionist',20, 7,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=7));
+INSERT INTO INSTRUCTORI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Iftim','Beatrice','profesionist',20,8,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=8));
+
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Camaru','Andrei','incepator',5,1,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Titu','Maiorescu','incepator',5,2,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=2));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Felix','Otilia','mediu',10,3,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Zeus','Mihai','mediu',10,4,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=4));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Comarn','Maria','avansat',15,5,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=5));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Zamfir','Romeo','avansat',15,6,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=6));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Ciuchina','Matei','profesionist',20, 7,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=7));
+INSERT INTO PIANISTI(nume, prenume, statut, experienta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('Aron','Delia','profesionist',20,8,(SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=8));
+
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Toma','Darius', 6, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Mihai','Alina', 6, 2, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=2));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Cozma','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Popescu','Camila', 8, 4, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=4));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('avansat','Teodor','Maria', 9, 5, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=5));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('avansat','Toporau','Cosmina', 10, 6, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=6));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('profesionist','Ungureanu','Mihaela', 6, 7, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=7));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('profesionist','Istrate','Renata', 6, 8, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=8));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Cana','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Tris','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Tor','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Afro','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Mecam','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Tina','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Rin','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Ego','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('mediu','Ton','Andreea', 8, 3, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=3));
+
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Dima','Darius', 6, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Cazat','Irina', 7, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Musca','Maria', 5, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Pacala','Erica', 8, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Potter','Ioana', 5, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Dimirie','Lucia', 6, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Cotu','Alex', 6, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Lama','Emina', 7, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+INSERT INTO ELEVI(statut, nume, prenume, varsta, Grupe_id_grupa, Grupe_Sali_id_sala) VALUES('incepator','Erm','Dana', 8, 1, (SELECT Sali_id_sala FROM GRUPE WHERE id_grupa=1));
+
+
+INSERT INTO Spectacole(nume_spectacol, capacitate, data_spectacol) VALUES('Dansand printre stele',8,'19-JAN-2021');
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (1,1,1,1);
+
+INSERT INTO Spectacole(nume_spectacol, capacitate, data_spectacol) VALUES('Cinderella',10,'19-JUN-2021');
+INSERT INTO Spectacole(nume_spectacol, capacitate, data_spectacol) VALUES('Spargatorul de nuci',9,'19-JUL-2021');
+INSERT INTO Spectacole(nume_spectacol, capacitate, data_spectacol) VALUES('Moby Dick',7,'19-JAN-2021');
+INSERT INTO Spectacole(nume_spectacol, capacitate, data_spectacol) VALUES('Nopti albe',10,'23-FEB-2021');
+SELECT * FROM SPECTACOLE;
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (1,1,1,2);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (1,1,1,3);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (1,1,1,4);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (1,1,1,5);
+
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (8,8,2,1);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (8,8,2,2);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (8,8,2,3);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (8,8,2,4);
+INSERT INTO ELEVI_SPECTACOL(Elevi_id_elev,Elevi_id_grupa,Elevi_id_sala,Spectacole_id_spectacol) VALUES (8,8,2,5);
+
+
+INSERT INTO USERS (id_user, parola) VALUES('Andr','1234');
+INSERT INTO USERS (id_user, parola) VALUES('Elena','abcd');
+INSERT INTO USERS (id_user, parola) VALUES('Marta','abcd');
+INSERT INTO USERS (id_user, parola) VALUES('Darius','abcd');
+INSERT INTO USERS (id_user, parola) VALUES('Vasi','abcd');
